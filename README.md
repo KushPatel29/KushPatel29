@@ -1,13 +1,14 @@
 # Hi, I'm Kush 👋
 
-I'm a BI & Analytics specialist in Vancouver — 4+ years building
+I'm a BI & Analytics specialist in Vancouver — 4+ years delivering
 finance-grade (GL/P&L) and operations reporting across sales, finance, and
 supply chain, most recently at a specialty food distributor. I work the whole
 path from raw data to the number an executive acts on: pipelines, warehouse
 models, semantic layers, DAX, and the dashboards on top.
 
-**dharma.patel552@gmail.com** · Vancouver, BC · open to BI Analyst /
-Analytics Engineer roles
+📫 **dharma.patel552@gmail.com** ·
+🔗 [**LinkedIn**](https://www.linkedin.com/in/kush-patel-48885719b/) ·
+📍 Vancouver, BC · ✅ open to **BI Analyst / Analytics Engineer** roles
 
 ## Eight repos, one rule
 
@@ -47,6 +48,35 @@ vector database where SQL is the right tool, no deep learning on 38 SKUs, no
 cloud cosplay. Knowing when a technique would be decoration is, I think, the
 actual skill.
 
+## Where I've done this for real
+
+The repos above aren't hypotheticals — they're sharpened versions of problems
+I've worked professionally:
+
+**Two Rivers Specialty Meats** — *Data Analyst: Operations, Logistics &
+Enterprise Reporting* (Vancouver)
+- Defined governed KPIs for P&L/GL and operations (OTIF, inventory turns,
+  days on hand) with Sales, Finance, and Supply Chain; built the Power BI
+  star-schema models and DAX behind them.
+- Developed Fabric / ADF / Synapse pipelines (SQL, PySpark) on
+  Bronze→Silver→Gold patterns while owning the legacy SSIS/SSRS estate — the
+  same modernization my [migration repo](https://github.com/KushPatel29/legacy-to-fabric-migration)
+  rehearses with a GO/NO-GO parallel-run gate.
+- Automated data-quality and reconciliation controls with logging and
+  exception reporting — cutting recurring discrepancies by ~45% and reporting
+  errors by ~30%. FEFO/expiry-risk and lot-traceability analytics for
+  perishable inventory — the direct ancestor of my
+  [control tower](https://github.com/KushPatel29/supply-chain-control-tower-).
+- Secure-by-design delivery: RLS/RBAC, column-level security, masking for
+  cost/margin and people data.
+
+**Shivam Investments** — *Financial Analyst, Data & Reporting* (remote)
+- GL/P&L reconciliations across sources — the discipline my
+  [reconciliation repo](https://github.com/KushPatel29/gl-reconciliation-dashboard-)
+  turns into a tested engine.
+- Automated recurring analysis with Python + SQL feeding Power BI, cutting
+  manual effort ~40%.
+
 ## What I work with
 
 **BI & semantic modeling** — Power BI (DAX, star schema, RLS/OLS,
@@ -60,6 +90,27 @@ it forward without breaking month-end
 
 ## Background
 
-- MPS in Analytics (Applied Machine Intelligence), Northeastern University — GPA 3.76
-- B.Eng. Computer Science, Gujarat Technological University
-- Microsoft Fabric Analytics Engineer Associate (DP-600) — in progress
+- 🎓 MPS in Analytics (Applied Machine Intelligence), Northeastern
+  University, Vancouver — GPA 3.76
+- 🎓 B.Eng. Computer Science, Gujarat Technological University
+- 📜 Microsoft Certified: Azure Data Engineer Associate (DP-203)
+- 📜 Microsoft Fabric Analytics Engineer Associate (DP-600) — in progress
+- 🏆 First prize at a wildfire-prediction hackathon — Python + Azure + live
+  sensor data (DHT22/LM393), because sometimes the dashboard needs hardware
+
+<details>
+<summary>📚 More certifications & coursework</summary>
+
+- Google Data Analytics
+- IBM Python for Data Science, AI and Development
+- Power BI Data Modelling with DAX · Advanced SQL
+- SQL for Data Science: Data Pipelines, DBMS, Data Modeling
+
+</details>
+
+---
+
+*If you only have five minutes: open
+[**Ask Your Data**](https://github.com/KushPatel29/IVA), read "The rule: no
+number without a query," and check that the badge is green. Everything else
+here works the same way.*
