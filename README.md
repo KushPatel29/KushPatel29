@@ -93,7 +93,6 @@ it forward without breaking month-end
 - 🎓 MPS in Analytics (Applied Machine Intelligence), Northeastern
   University, Vancouver — GPA 3.76
 - 🎓 B.Eng. Computer Science, Gujarat Technological University
-- 📜 Microsoft Certified: Azure Data Engineer Associate (DP-203)
 - 📜 Microsoft Fabric Analytics Engineer Associate (DP-600) — in progress
 - 🏆 First prize at a wildfire-prediction hackathon — Python + Azure + live
   sensor data (DHT22/LM393), because sometimes the dashboard needs hardware
