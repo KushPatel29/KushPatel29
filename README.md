@@ -10,13 +10,13 @@ models, semantic layers, DAX, and the dashboards on top.
 🔗 [**LinkedIn**](https://www.linkedin.com/in/kush-patel-48885719b/) ·
 📍 Vancouver, BC · ✅ open to **BI Analyst / Analytics Engineer / Decision Support** roles
 
-## Ten repos, one rule
+## Eleven repos, one rule
 
 Everything below was built under a single rule: **no claim without a number,
 and no number without a test that fails if it stops being true.** Every repo
 generates its data from a fixed seed, rebuilds end-to-end in GitHub Actions,
-and re-verifies its own claims on every push — **620+ automated tests across
-the ten repos**. A green badge here means *it runs*, not just that it's
+and re-verifies its own claims on every push — **687 automated tests across
+the eleven repos**. A green badge here means *it runs*, not just that it's
 written down.
 
 Three of them are **live, and you can click them** — no install, no signup:
@@ -31,14 +31,15 @@ lying. Start there:
 
 | Project | The one thing to know | Stack |
 |---|---|---|
-| 💬 [**Ask Your Data**](https://github.com/KushPatel29/IVA) · [**live ▶**](https://ask-your-data-kp.streamlit.app) | A grounded text-to-SQL assistant over all my portfolio datasets (36 tables, 6 business domains). The LLM never answers from memory — it writes SQL, the SQL runs, and it's shown next to the answer. Read-only guard, bounded self-correction proven in CI with a scripted fake model, golden-question accuracy contract. The public demo runs **without an API key**: it answers the contract's questions by executing their committed reference SQL live, and labels every one as reference SQL rather than passing it off as the model's work. 99 tests. | Python, DuckDB, Claude API, Streamlit |
+| 💬 [**Ask Your Data**](https://github.com/KushPatel29/ask-your-data) · [**live ▶**](https://ask-your-data-kp.streamlit.app) | A grounded text-to-SQL assistant over all my portfolio datasets (36 tables, 6 business domains). The LLM never answers from memory — it writes SQL, the SQL runs, and it's shown next to the answer. Read-only guard, bounded self-correction proven in CI with a scripted fake model, golden-question accuracy contract. The public demo runs **without an API key**: it answers the contract's questions by executing their committed reference SQL live, and labels every one as reference SQL rather than passing it off as the model's work. 99 tests. | Python, DuckDB, Claude API, Streamlit |
 | 🔎 [**Transaction Monitoring**](https://github.com/KushPatel29/aml-transaction-monitoring) · [**live ▶**](https://aml-transaction-monitoring.streamlit.app) | A flat $10,000 reporting threshold finds 38 of 60 planted cases and raises 555 alerts doing it. Five explainable rules over an unsupervised model find **all 60 on a third fewer alerts**, at 2.4× the precision. The honest half: ablation shows the anomaly model lifts ranking 49% but saves 1.8% at the operating point — so the README says it earns its place on triage *order*, not on the accept/reject decision. 17 SQL features proven equal to their Python twins on all 100,299 rows. 154 tests. | Python, SQLite, scikit-learn, Streamlit |
 | 🏗️ [**Supply Chain Control Tower**](https://github.com/KushPatel29/supply-chain-control-tower-) | Medallion pipeline with a three-tier data defense — schema contracts before Bronze, row quarantine with replay, a DQ gate on Gold — each tier proven by CI injecting failures. 10M-row Delta benchmarks, dynamic RLS/OLS verified by impersonated DAX. 49 tests. | Fabric patterns, PySpark, Delta, Power BI |
 | 🛒 [**Customer Recommendation Engine**](https://github.com/KushPatel29/Customer-Recommendation-Engine) · [**live ▶**](https://cross-sell-rep-console.streamlit.app) | The fancy two-stage ranker scored 80.0% hit-rate@10; plain collaborative filtering scored 84.9%. The simple model ships, the loss is documented, and CI enforces that the winner keeps winning. The live rep console turns that into what a salesperson actually needs: what to pitch next, why, and what it's worth. FastAPI + Docker serving, A/B framework, 7-page Power BI. 38 tests. | Python, scikit-learn, FastAPI, MLflow |
+| 📈 [**Marketing Attribution & Incrementality**](https://github.com/KushPatel29/marketing-attribution-analytics) | Attribution is the one analytics discipline where everyone argues and nobody can check the answer, because the counterfactual isn't in the data. So I generated one: each user carries a fixed random draw, and a channel's true contribution is measured by re-running that draw with its touches deleted. Six models compete against it and **none wins** — the exact Shapley value and a Markov chain both lose to a heuristic that fits in a `CASE` expression. Last-touch hands *direct* 24.5% of conversions against a true 1.9%. Then a geo holdout settles it: naive pre/post reads 11.0% against a planted 5.5%, difference-in-differences returns 4.0% with an interval that covers it. 56 tests. | Python, SQL, causal inference, Streamlit |
 | 🧑‍🤝‍🧑 [**HR Attrition Analytics**](https://github.com/KushPatel29/hr-attrition-analytics) | People analytics with the guardrails real employee data demands: k-anonymity masking, a disparate-impact CI gate (four-fifths rule + Fisher's exact), survival analysis with honest censoring. The flight-risk model uses zero protected attributes — and scores better without them. 52 tests. | T-SQL, Python, lifelines, Power BI |
 | 🔄 [**Supply Chain Analytics (dbt)**](https://github.com/KushPatel29/supply-chain-analytics-dbt) | dbt Core, staging → marts on dual DuckDB/Snowflake profiles: incremental loads, SCD2 snapshots, MetricFlow semantic layer, Airflow DAG with DagBag validation. 32 dbt data tests across 15 models. | dbt, DuckDB/Snowflake, MetricFlow, Airflow |
 | 🏥 [**Health System Decision Support**](https://github.com/KushPatel29/healthcare-claims-analytics) | Two health systems, one standard. **Canadian side:** CIHI-DAD-shaped activity (CMG+/RIW, cost per weighted case, ALC, risk-adjusted readmission), SPC with Laney correction — where I found the metric everyone reports is 4.6× overdispersed and fires 41 signals in 19 of 24 months — and a health-economic evaluation that comes out *dominant* on one costing perspective and $192k/QALY on the other. Ends in a briefing note and a costed business case. **US side:** an NRV model pricing $3.6M of open AR at the ~$1.7M it will actually collect. Plus Safe Harbor + k-anonymity de-identification with a measured re-identification risk. The Canadian layer now leads the Power BI report — activity and the ALC/flow/SPC page come first, because that is the order a health authority reads them in. No PHI. 116 tests. | Python, Power BI, DAX, SPC, HTA |
-| 🧪 [**Clinical Data Management**](https://github.com/KushPatel29/clinical-data-management) | A trial database as code: CDASH CRF metadata, an executable Data Validation Specification, SDTM DM/AE/VS with conformance checks, MedDRA/WHODrug coding, and a UAT plan generated from the spec. The generator writes an exhaustive defect manifest — 49 injected, **49 detected, 0 missed, 0 false positives** — and that reconciliation caught a real bug where four protocol deviations went silently undetected. 51 tests. | Python, CDISC, CDASH/SDTM |
+| 🧪 [**Clinical Data Management**](https://github.com/KushPatel29/clinical-data-management) | A trial database as code: CDASH CRF metadata, an executable Data Validation Specification, SDTM DM/AE/VS with conformance checks, MedDRA/WHODrug coding, and a UAT plan generated from the spec. The generator writes an exhaustive defect manifest — 49 injected, **49 detected, 0 missed, 0 false positives** — and that reconciliation caught a real bug where four protocol deviations went silently undetected. The status board is hand-generated SVG, because "stdlib only" is a claim and a chart is not a good enough reason to break it. 58 tests. | Python, CDISC, CDASH/SDTM |
 | 💰 [**GL/P&L Reconciliation**](https://github.com/KushPatel29/gl-reconciliation-dashboard-) | ERP-vs-subledger reconciliation that detects four discrepancy classes and proves every dollar of variance ties to source — then re-runs the same engine, unmodified, over a FOCUS-format cloud bill for FinOps chargeback. 22 tests. | T-SQL, SQLite, Power BI, DAX |
 | 🚚 [**Legacy-to-Fabric Migration**](https://github.com/KushPatel29/legacy-to-fabric-migration) | SSIS/SSRS → notebook pipeline with parallel-run validation and a GO/NO-GO cutover gate; negative tests prove the validator catches dropped rows, offsetting errors, and phantom keys. 11 tests. | SSIS, SSRS, T-SQL, PySpark |
 
@@ -58,6 +59,16 @@ The layered transaction-monitoring detector is the same shape: blending an
 anomaly model into the score lifts ranking by 49%, and saves 1.8% at the
 threshold you would actually run. Both numbers are in the README, because
 only quoting the first one is how a model gets credit for work the rules did.
+
+The biggest loss is the attribution project, where I built a dataset with a
+known answer and then watched **every model fail to find it** — including the
+exact Shapley value and a Markov chain, both beaten by a 40/20/40 heuristic.
+The reason turned out to be structural rather than fixable: every model that
+reads only a journey log can see how often a channel was *present*, never
+whether it *caused* anything. That is also where the nicest piece of nuance in
+the portfolio lives — last-touch is the worst model in the table and the least
+damaging one for splitting paid budget, because its catastrophic error lands
+on a channel nobody can buy.
 
 And three bugs found by reconciliation rather than by a person: a visit-window
 check keyed on the wrong record, which let four protocol deviations through
@@ -143,5 +154,5 @@ breaking month-end
 [**Ask Your Data**](https://ask-your-data-kp.streamlit.app) and pick a
 question — the SQL that produced the number is shown underneath it, and CI
 re-runs that same SQL on every push. Then read
-["The rule: no number without a query"](https://github.com/KushPatel29/IVA)
+["The rule: no number without a query"](https://github.com/KushPatel29/ask-your-data)
 and check the badge is green. Everything else here works the same way.*
