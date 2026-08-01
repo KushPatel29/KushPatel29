@@ -15,7 +15,7 @@ models, semantic layers, DAX, and the dashboards on top.
 Everything below was built under a single rule: **no claim without a number,
 and no number without a test that fails if it stops being true.** Every repo
 generates its data from a fixed seed, rebuilds end-to-end in GitHub Actions,
-and re-verifies its own claims on every push — **719 automated tests across
+and re-verifies its own claims on every push — **736 automated tests across
 the eleven repos**. A green badge here means *it runs*, not just that it's
 written down.
 
@@ -42,7 +42,7 @@ lying. Start there:
 | 🏥 [**Health System Decision Support**](https://github.com/KushPatel29/healthcare-claims-analytics) | Two health systems, one standard. **Canadian side:** CIHI-DAD-shaped activity (CMG+/RIW, cost per weighted case, ALC, risk-adjusted readmission), SPC with Laney correction — where I found the metric everyone reports is 4.6× overdispersed and fires 41 signals in 19 of 24 months — and a health-economic evaluation that comes out *dominant* on one costing perspective and $192k/QALY on the other. Ends in a briefing note and a costed business case. **US side:** an NRV model pricing $3.6M of open AR at the ~$1.7M it will actually collect. Plus Safe Harbor + k-anonymity de-identification with a measured re-identification risk. The Canadian layer now leads the Power BI report — activity and the ALC/flow/SPC page come first, because that is the order a health authority reads them in. No PHI. 116 tests. | Python, Power BI, DAX, SPC, HTA |
 | 🧪 [**Clinical Data Management**](https://github.com/KushPatel29/clinical-data-management) | A trial database as code: CDASH CRF metadata, an executable Data Validation Specification, SDTM DM/AE/VS with conformance checks, MedDRA/WHODrug coding, and a UAT plan generated from the spec. The generator writes an exhaustive defect manifest — 49 injected, **49 detected, 0 missed, 0 false positives** — and that reconciliation caught a real bug where four protocol deviations went silently undetected. The status board is hand-generated SVG, because "stdlib only" is a claim and a chart is not a good enough reason to break it. 58 tests. | Python, CDISC, CDASH/SDTM |
 | 💰 [**GL/P&L Reconciliation**](https://github.com/KushPatel29/gl-reconciliation-dashboard) | ERP-vs-subledger reconciliation that detects four discrepancy classes and proves every dollar of variance ties to source — then re-runs the same engine, unmodified, over a FOCUS-format cloud bill for FinOps chargeback. 22 tests. | T-SQL, SQLite, Power BI, DAX |
-| 🚚 [**Legacy-to-Fabric Migration**](https://github.com/KushPatel29/legacy-to-fabric-migration) | SSIS/SSRS → notebook pipeline with parallel-run validation and a GO/NO-GO cutover gate; negative tests prove the validator catches dropped rows, offsetting errors, and phantom keys. 11 tests. | SSIS, SSRS, T-SQL, PySpark |
+| 🚚 [**Legacy-to-Fabric Migration**](https://github.com/KushPatel29/legacy-to-fabric-migration) | SSIS/SSRS → notebook pipeline with parallel-run validation and a GO/NO-GO cutover gate; negative tests prove the validator catches dropped rows, offsetting errors and phantom keys — and, just as importantly, that it *doesn't* fire on shuffled row order or last-place float drift. Two empty outputs used to return GO; that one is fixed and first in the file. 28 tests. | SSIS, SSRS, T-SQL, PySpark |
 
 ## My favorite results are the losses
 
