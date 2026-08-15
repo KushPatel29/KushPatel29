@@ -15,15 +15,18 @@ models, semantic layers, DAX, and the dashboards on top.
 Everything below was built under a single rule: **no claim without a number,
 and no number without a test that fails if it stops being true.** Every repo
 generates its data from a fixed seed, rebuilds end-to-end in GitHub Actions,
-and re-verifies its own claims on every push — **749 automated tests across
+and re-verifies its own claims on every push — **2,109 automated tests across
 the twelve repos**. A green badge here means *it runs*, not just that it's
 written down.
 
-Four of them are **live, and you can click them** — no install, no signup:
+Five of them are **live, and you can click them** — no install, no signup:
+[retail analytics platform](https://kushpatel29.github.io/wholesale-analytics-platform/) ·
 [transaction monitoring](https://aml-transaction-monitoring.streamlit.app) ·
 [cross-sell console](https://cross-sell-rep-console.streamlit.app) ·
 [Ask Your Data](https://ask-your-data-kp.streamlit.app) ·
 [attribution vs truth](https://attribution-vs-truth.streamlit.app).
+The first is a prerendered static site, so it opens instantly — the others are
+Streamlit apps that sleep when idle and take a moment to wake.
 
 One of these repos used to be a Raspberry Pi voice assistant I built years
 ago. I rebuilt it into the capstone of this portfolio and kept the git
