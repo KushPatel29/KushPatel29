@@ -10,23 +10,27 @@ models, semantic layers, DAX, and the dashboards on top.
 🔗 [**LinkedIn**](https://www.linkedin.com/in/kush-patel-48885719b/) ·
 📍 Vancouver, BC · ✅ open to **BI Analyst / Analytics Engineer / Decision Support** roles
 
-## Twelve repos, one rule
+## Fourteen public repos, one rule
 
 Everything below was built under a single rule: **no claim without a number,
 and no number without a test that fails if it stops being true.** Every repo
 generates its data from a fixed seed, rebuilds end-to-end in GitHub Actions,
 and re-verifies its own claims on every push — **2,109 automated tests across
-the twelve repos**. A green badge here means *it runs*, not just that it's
-written down.
+the twelve featured repos below**. Two additional CI-backed utilities — the
+[cost-to-price calculator](https://github.com/KushPatel29/cost-to-price-calculator)
+and [inventory analytics app](https://github.com/KushPatel29/inventory-analytics-app)
+— bring the public-repo total to fourteen without changing that featured-set
+test total. A green badge here means *it runs*, not just that it's written down.
 
-Five of them are **live, and you can click them** — no install, no signup:
+Five of them have **hosted endpoints you can click** — no local install:
 [retail analytics platform](https://kushpatel29.github.io/wholesale-analytics-platform/) ·
 [transaction monitoring](https://aml-transaction-monitoring.streamlit.app) ·
 [cross-sell console](https://cross-sell-rep-console.streamlit.app) ·
 [Ask Your Data](https://ask-your-data-kp.streamlit.app) ·
 [attribution vs truth](https://attribution-vs-truth.streamlit.app).
 The first is a prerendered static site, so it opens instantly — the others are
-Streamlit apps that sleep when idle and take a moment to wake.
+Streamlit apps that sleep when idle and may take a moment to wake or request a
+Streamlit sign-in, depending on the host's current visibility setting.
 
 One of these repos used to be a Raspberry Pi voice assistant I built years
 ago. I rebuilt it into the capstone of this portfolio and kept the git
@@ -35,9 +39,9 @@ lying. Start there:
 
 | Project | The one thing to know | Stack |
 |---|---|---|
-| 💬 [**Ask Your Data**](https://github.com/KushPatel29/ask-your-data) · [**live ▶**](https://ask-your-data-kp.streamlit.app) | A grounded text-to-SQL assistant over all my portfolio datasets (36 tables, 6 business domains). The LLM never answers from memory — it writes SQL, the SQL runs, and it's shown next to the answer. Read-only guard, bounded self-correction proven in CI with a scripted fake model, golden-question accuracy contract. The public demo runs **without an API key**: it answers the contract's questions by executing their committed reference SQL live, and labels every one as reference SQL rather than passing it off as the model's work. 99 tests. | Python, DuckDB, Claude API, Streamlit |
+| 💬 [**Ask Your Data**](https://github.com/KushPatel29/ask-your-data) · [**live ▶**](https://ask-your-data-kp.streamlit.app) | A grounded text-to-SQL assistant over 36 tables and 6 business domains. A local MiniLM/Chroma retriever narrows the schema to nine tables with **100% reference-table recall and 69% less schema context**; Claude then makes a real structured tool choice between writing SQL and refusing. SQL runs behind a read-only guard and appears beside the answer. Bounded self-correction is proven in CI with a scripted fake model. The hosted keyless mode executes committed reference SQL and labels it honestly. 99 tests. | Python, DuckDB, Chroma, Claude API, Streamlit |
 | 🔎 [**Transaction Monitoring**](https://github.com/KushPatel29/aml-transaction-monitoring) · [**live ▶**](https://aml-transaction-monitoring.streamlit.app) | A flat $10,000 reporting threshold finds 38 of 60 planted cases and raises 555 alerts doing it. Five explainable rules over an unsupervised model find **all 60 on a third fewer alerts**, at 2.4× the precision. The honest half: ablation shows the anomaly model lifts ranking 49% but saves 1.8% at the operating point — so the README says it earns its place on triage *order*, not on the accept/reject decision. 17 SQL features proven equal to their Python twins on all 100,299 rows. 154 tests. | Python, SQLite, scikit-learn, Streamlit |
-| 🏪 [**Retail Analytics Platform**](https://github.com/KushPatel29/wholesale-analytics-platform) · [**live ▶**](https://kushpatel29.github.io/wholesale-analytics-platform/) | Sixteen pages that between them printed **three different HHI values at the same time**, because every page did its own arithmetic. Forty-two metrics now live in one layer, each with a formula, grain, source table, owner page and **gross-or-net basis**, each pinned by a test with a hand-computed expected value, and all of it published as a [catalogue page](https://kushpatel29.github.io/wholesale-analytics-platform/metrics/) — because a definition nobody can read is a definition nobody can check. The demand planner used to produce a forecast nobody scored; it now reports **−18.9% variance, +$881k bias, 50% hit rate** and publishes a 209% MAPE rather than hiding it, since the inflation comes from small SKU-month denominators and that is exactly why the other three sit beside it. A finance layer adds an income statement and balance sheet whose revenue and COGS are *read from the sales fact*, so the top line matches the Overview (net margin 4.6%, current ratio 2.23×, ROA 11.8%); a marketing layer adds CAC $17,655 on a 9.1-month payback. Two numbers are deliberately left unflattering: inventory turnover appears **twice** on two honest bases, and ROMI reads −758% because the standard formula credits marketing with all sales movement. Seven metrics that would need a source system this business lacks are catalogued as **not implemented, with the system each would require**. Prerendered: 100 charts frozen to SVG, every page verified to render with networking blocked. 1,194 tests. | Python, Flask, DuckDB, Plotly, Playwright, Docker |
+| 🏪 [**Retail Analytics Platform**](https://github.com/KushPatel29/wholesale-analytics-platform) · [**live ▶**](https://kushpatel29.github.io/wholesale-analytics-platform/) | Sixteen pages that between them printed **three different HHI values at the same time**, because every page did its own arithmetic. One catalogue now governs **62 definitions: 47 implemented and 15 explicitly unavailable without a named source system**. Every implemented metric carries a formula, grain, source table, owner page and **gross-or-net basis**, pinned by a hand-computed test. The demand planner used to produce a forecast nobody scored; it now reports **−18.9% variance, +$881k bias, 50% hit rate** and publishes a 209% MAPE rather than hiding it. Finance adds statements whose revenue and COGS are read from the sales fact (net margin 4.6%, current ratio 2.23×, ROA 11.8%); marketing adds CAC $17,655 on a 9.1-month payback. Inventory turnover appears twice on two honest bases, and ROMI reads −758% rather than being cosmetically suppressed. Prerendered: 100 charts frozen to SVG, every page verified with networking blocked. 1,194 tests. | Python, Flask, DuckDB, Plotly, Playwright, Docker |
 | 🏗️ [**Supply Chain Control Tower**](https://github.com/KushPatel29/supply-chain-control-tower) | Medallion pipeline with a three-tier data defense — schema contracts before Bronze, row quarantine with replay, a DQ gate on Gold — each tier proven by CI injecting failures. 10M-row Delta benchmarks, dynamic RLS/OLS verified by impersonated DAX. 49 tests. | Fabric patterns, PySpark, Delta, Power BI |
 | 🛒 [**Customer Recommendation Engine**](https://github.com/KushPatel29/Customer-Recommendation-Engine) · [**live ▶**](https://cross-sell-rep-console.streamlit.app) | The fancy two-stage ranker scored 80.0% hit-rate@10; plain collaborative filtering scored 84.9%. The simple model ships, the loss is documented, and CI enforces that the winner keeps winning. The live rep console turns that into what a salesperson actually needs: what to pitch next, why, and what it's worth. FastAPI + Docker serving, A/B framework, 7-page Power BI. 38 tests. | Python, scikit-learn, FastAPI, MLflow |
 | 📈 [**Marketing Attribution & Incrementality**](https://github.com/KushPatel29/marketing-attribution-analytics) · [**live ▶**](https://attribution-vs-truth.streamlit.app) | Attribution is the one analytics discipline where everyone argues and nobody can check the answer, because the counterfactual isn't in the data. So I generated one: each user carries a fixed random draw, and a channel's true contribution is measured by re-running that draw with its touches deleted. Six models compete against it and **none wins** — the exact Shapley value and a Markov chain both lose to a heuristic that fits in a `CASE` expression. Last-touch hands *direct* 24.5% of conversions against a true 1.9%. Then a geo holdout settles it: naive pre/post reads 11.0% against a planted 5.5%, difference-in-differences returns 4.0% with an interval that covers it. A second act asks the same questions of a **B2B SaaS motion** — CRM pipeline, ARR waterfall, NRR vs GRR, quota and capacity, a LookML semantic layer — and finds the segment with the fastest cycle and the best pipeline coverage is the one that loses money on every customer. 90 tests. | Python, SQL, causal inference, LookML, Streamlit |
@@ -83,10 +87,10 @@ empty while passing every test it had** — the tests checked the maths, and
 nothing checked that the thing drew. None of them crashed. All three are now
 tests.
 
-Each repo also has a *"things I deliberately didn't build"* section: no
-vector database where SQL is the right tool, no deep learning on 38 SKUs, no
-cloud cosplay. Knowing when a technique would be decoration is, I think, the
-actual skill.
+Each repo also has a *"things I deliberately didn't build"* section: no vector
+search over business rows where SQL is the right tool (Ask Your Data embeds only
+schema descriptions), no deep learning on 38 SKUs, no cloud cosplay. Knowing
+when a technique would be decoration is, I think, the actual skill.
 
 ## Where I've done this for real
 
