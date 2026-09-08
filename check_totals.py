@@ -24,8 +24,9 @@ from pathlib import Path
 README = Path(__file__).resolve().parent / "README.md"
 
 # dbt asserts with its own test framework, not pytest, so its contribution is
-# written as "32 dbt data tests" and does not match the pattern below.
-DBT_TESTS = 32
+# written as "154 dbt data tests" and does not match the pattern below.
+# 148 generic and singular tests plus 6 unit tests.
+DBT_TESTS = 154
 
 
 def main() -> int:
