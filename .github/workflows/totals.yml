@@ -1,0 +1,29 @@
+name: Totals
+
+# This page states a headline test total and then twelve numbers that are
+# supposed to add up to it. They have disagreed before - the page claimed 81
+# tests for a repository whose badge said 404 - because the figures were typed
+# once and never compared to anything. For a portfolio whose one rule is that
+# no claim ships without a test, that is the worst defect it can carry.
+
+on:
+  push:
+  pull_request:
+  schedule:
+    # Weekly, so a green badge means the arithmetic holds now rather than that
+    # it held the day of the last edit.
+    - cron: "37 6 * * 3"
+
+permissions:
+  contents: read
+
+jobs:
+  totals:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: The featured counts must add up to the headline
+        run: python check_totals.py
