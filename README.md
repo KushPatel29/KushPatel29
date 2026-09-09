@@ -15,7 +15,7 @@ models, semantic layers, DAX, and the dashboards on top.
 Everything below was built under a single rule: **no claim without a number,
 and no number without a test that fails if it stops being true.** Every repo
 generates its data from a fixed seed, rebuilds end-to-end in GitHub Actions,
-and re-verifies its own claims on every push — **6,428 automated tests across
+and re-verifies its own claims on every push — **6,432 automated tests across
 the twelve featured repos below**. Two additional CI-backed utilities — the
 [cost-to-price calculator](https://github.com/KushPatel29/cost-to-price-calculator)
 and [inventory analytics app](https://github.com/KushPatel29/inventory-analytics-app)
