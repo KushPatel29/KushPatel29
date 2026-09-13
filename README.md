@@ -1,21 +1,23 @@
 # Hi, I'm Kush 👋
 
-I'm a BI & Analytics specialist in Vancouver — 4+ years delivering
-finance-grade (GL/P&L) and operations reporting across sales, finance, and
-supply chain, most recently at a specialty food distributor. I work the whole
-path from raw data to the number an executive acts on: pipelines, warehouse
-models, semantic layers, DAX, and the dashboards on top.
+I'm a Business Analyst and BI / Analytics specialist in Vancouver — 4+ years
+delivering finance-grade (GL/P&L) and operations reporting across sales,
+finance, and supply chain, most recently at a specialty food distributor. I
+work the whole path from an unclear operational need to a controlled decision:
+stakeholders, requirements, current/future-state process, data quality,
+implementation, adoption, warehouse models, Power BI, and the evidence behind
+the recommendation.
 
 📫 **dharma.patel552@gmail.com** ·
 🔗 [**LinkedIn**](https://www.linkedin.com/in/kush-patel-48885719b/) ·
-📍 Vancouver, BC · ✅ open to **BI Analyst / Analytics Engineer / Decision Support** roles
+📍 Vancouver, BC · ✅ open to **Business Analyst / BI Analyst / Analytics Engineer / Decision Support** roles
 
 ## Fourteen public repos, one rule
 
 Everything below was built under a single rule: **no claim without a number,
 and no number without a test that fails if it stops being true.** Every repo
 generates its data from a fixed seed, rebuilds end-to-end in GitHub Actions,
-and re-verifies its own claims on every push — **9,398 automated tests across
+and re-verifies its own claims on every push — **9,415 automated tests across
 the fourteen featured repos below**. A green badge here means *it runs*, not
 just that it's written down.
 
@@ -34,6 +36,17 @@ deployments are public decision studios; the six Streamlit Community Cloud
 destinations sleep when idle and may take a moment to wake or request a
 Streamlit sign-in, depending on the host's current visibility setting.
 
+**Hiring for business analysis, asset management, or operational decision
+support?** Start with the
+[Inventory Analytics live decision studio](https://inventory-analytics-app.onrender.com/)
+and its [requirements-to-UAT interview case](https://github.com/KushPatel29/inventory-analytics-app/blob/master/docs/business-analysis-and-interview-guide.md),
+then review the
+[asset lifecycle, condition/criticality, renewal and capital-scenario evidence](https://github.com/KushPatel29/legacy-to-fabric-migration/tree/master/examples/asset_management)
+and the [public-sector decision and procurement brief](https://github.com/KushPatel29/legacy-to-fabric-migration/blob/master/docs/business-analysis/PUBLIC_SECTOR_DECISION_AND_PROCUREMENT_BRIEF.md).
+All asset records, coordinates, costs, conditions and scenarios are synthetic;
+the evidence demonstrates transferable methods, not municipal employment or
+an approved capital plan.
+
 One of these repos used to be a Raspberry Pi voice assistant I built years
 ago. I rebuilt it into the capstone of this portfolio and kept the git
 history, because a portfolio that pretends its author sprang fully formed is
@@ -46,7 +59,7 @@ lying. Start there:
 | 🔎 [**Transaction Monitoring**](https://github.com/KushPatel29/aml-transaction-monitoring) · [**live ▶**](https://aml-transaction-monitoring.streamlit.app) | A flat $10,000 reporting threshold finds 38 of 60 planted cases and raises 555 alerts doing it. Five explainable rules over an unsupervised model find **all 60 on a third fewer alerts**, at 2.4× the precision. The honest half: ablation shows the anomaly model lifts ranking 49% but saves 1.8% at the operating point — so the README says it earns its place on triage *order*, not on the accept/reject decision. 17 SQL features proven equal to their Python twins on all 100,299 rows. 155 tests. | Python, SQLite, scikit-learn, Streamlit |
 | 🏪 [**Retail Analytics Platform**](https://github.com/KushPatel29/wholesale-analytics-platform) · [**live ▶**](https://kushpatel29.github.io/wholesale-analytics-platform/) | Sixteen pages that between them printed **three different HHI values at the same time**, because every page did its own arithmetic. One catalogue now governs **62 definitions: 47 implemented and 15 explicitly unavailable without a named source system**. Every implemented metric carries a formula, grain, source table, owner page and **gross-or-net basis**, pinned by a hand-computed test. The demand planner used to produce a forecast nobody scored; it now leads with **WAPE 11.6% and a 40% hit rate** from a rolling-origin backtest, and demotes MAPE to a labelled diagnostic because small SKU-month denominators make it least reliable where it looks most alarming. Finance adds statements whose revenue and COGS are read from the sales fact (net margin 2.8%, current ratio 1.02×, ROA 2.3%); marketing adds CAC $17,667 on an 11.0-month payback. Inventory turnover appears twice on two honest bases, and ROMI is withheld outright — spend and wins exist, exposure and a counterfactual do not. Prerendered: 100 charts frozen to SVG, every page verified with networking blocked. 1,412 tests. | Python, Flask, DuckDB, Plotly, Playwright, Docker |
 | 🏗️ [**Supply Chain Control Tower**](https://github.com/KushPatel29/supply-chain-control-tower) · [**live ▶**](https://kush-network-risk-decision-room.onrender.com/) | Medallion pipeline with a three-tier data defense — schema contracts before Bronze, row quarantine with replay, a DQ gate on Gold — each tier proven by CI injecting failures. The live Network Risk Decision Assurance Studio adds governed GIS evidence: 23 synthetic WGS 84 reference points, QGIS/ArcGIS-ready GeoJSON, nearest-node screening, traceable requirements and UAT, accountable handoff, and a reproducible evidence pack. The map deliberately labels straight-line proximity as screening rather than route, capacity, or execution approval. 10M-row Delta benchmarks and dynamic RLS/OLS verified by impersonated DAX. 690 tests. | Fabric patterns, PySpark, Delta, Power BI, Streamlit, GIS |
-| 📦 [**Inventory Analytics**](https://github.com/KushPatel29/inventory-analytics-app) · [**live ▶**](https://inventory-analytics-app.onrender.com/) | A six-workspace operations decision studio that turns nine WMS/ERP extracts into demand forecasts, replenishment decisions, ABC-XYZ policy, network-transfer screening, supplier performance, inventory-accuracy controls, and a financially ranked action register. Seven forecasting methods compete in rolling-origin backtests; Python calculations are held to DuckDB marts by 14 parity tests; every page ends in a decision, export, or named handoff rather than another chart. The deterministic demo covers 420 SKUs across 7 nodes and produces 1,170 prioritized actions. 289 tests. | Python, Flask, DuckDB, forecasting, inventory planning, Render |
+| 📦 [**Inventory Analytics**](https://github.com/KushPatel29/inventory-analytics-app) · [**live ▶**](https://inventory-analytics-app.onrender.com/) · [**BA case**](https://github.com/KushPatel29/inventory-analytics-app/blob/master/docs/business-analysis-and-interview-guide.md) | A six-workspace operations decision studio that turns nine WMS/ERP extracts into demand forecasts, replenishment decisions, ABC-XYZ policy, network-transfer screening, supplier performance, inventory-accuracy controls, and a financially ranked action register. Seven forecasting methods compete in rolling-origin backtests; Python calculations are held to DuckDB marts by 14 parity tests; every page ends in a decision, export, or named handoff rather than another chart. The deterministic demo covers 420 SKUs across 7 nodes and produces 1,170 prioritized actions. Its reviewable BA case adds stakeholders, current/future state, 11 traced requirements, 10 UAT scenarios, a pilot/adoption plan, and an eight-minute interview walkthrough. 289 tests. | Python, Flask, DuckDB, forecasting, inventory planning, BA delivery, Render |
 | 🛒 [**Customer Recommendation Engine**](https://github.com/KushPatel29/Customer-Recommendation-Engine) · [**live ▶**](https://cross-sell-rep-console.streamlit.app) | The fancy two-stage ranker scored 81.2% recall@10; plain collaborative filtering scored 84.9%. The simple model ships, the loss is documented, and CI enforces that the winner keeps winning. The live rep console turns that into what a salesperson actually needs: what to pitch next, why, and what it's worth. FastAPI + Docker serving, A/B framework, 9-page Power BI. 613 tests. | Python, scikit-learn, FastAPI, MLflow |
 | 📈 [**Marketing Attribution & Incrementality**](https://github.com/KushPatel29/marketing-attribution-analytics) · [**live ▶**](https://attribution-vs-truth.streamlit.app) | Attribution is the one analytics discipline where everyone argues and nobody can check the answer, because the counterfactual isn't in the data. So I generated one: each user carries a fixed random draw, and a channel's true contribution is measured by re-running that draw with its touches deleted. Six models compete against it and **none wins** — the exact Shapley value and a Markov chain both lose to a heuristic that fits in a `CASE` expression. Last-touch hands *direct* 24.5% of conversions against a true 1.9%. Then a geo holdout settles it: naive pre/post reads 11.0% against a planted 5.5%, difference-in-differences returns 4.0% with an interval that covers it. A second act asks the same questions of a **B2B SaaS motion** — CRM pipeline, ARR waterfall, NRR vs GRR, quota and capacity, a LookML semantic layer — and finds the segment with the fastest cycle and the best pipeline coverage is the one that loses money on every customer. 91 tests. | Python, SQL, causal inference, LookML, Streamlit |
 | 🧑‍🤝‍🧑 [**HR Attrition Analytics**](https://github.com/KushPatel29/hr-attrition-analytics) | People analytics with the guardrails real employee data demands: k-anonymity masking, a disparate-impact CI gate (four-fifths rule + Fisher's exact), survival analysis with honest censoring. The flight-risk model uses zero protected attributes — and scores better without them. 629 tests. | T-SQL, Python, lifelines, Power BI |
@@ -54,7 +67,7 @@ lying. Start there:
 | 🏥 [**Health System Decision Support**](https://github.com/KushPatel29/healthcare-claims-analytics) | Two health systems, one standard. **Canadian side:** CIHI-DAD-shaped activity (CMG+/RIW, cost per weighted case, ALC, risk-adjusted readmission), SPC with Laney correction — where I found the metric everyone reports is 4.6× overdispersed and fires 41 signals in 19 of 24 months — and a health-economic evaluation that comes out *dominant* on one costing perspective and $192k/QALY on the other. Ends in a briefing note and a costed business case. **US side:** an NRV model pricing $3.6M of open AR at the ~$1.7M it will actually collect. Plus Safe Harbor + k-anonymity de-identification with a measured re-identification risk. The Canadian layer now leads the Power BI report — activity and the ALC/flow/SPC page come first, because that is the order a health authority reads them in. No PHI. 604 tests. | Python, Power BI, DAX, SPC, HTA |
 | 🧪 [**Clinical Data Management**](https://github.com/KushPatel29/clinical-data-management) · [**live ▶**](https://kush-clinical-data-dashboard.streamlit.app/) | A trial database as code: CDASH CRF metadata, an executable Data Validation Specification, SDTM DM/AE/VS with conformance checks, MedDRA/WHODrug coding, and a UAT plan generated from the spec. The generator writes an exhaustive defect manifest — 49 injected, **49 detected, 0 missed, 0 false positives** — and that reconciliation caught a real bug where four protocol deviations went silently undetected. The status board is hand-generated SVG, because "stdlib only" is a claim and a chart is not a good enough reason to break it. 255 tests. | Python, CDISC, CDASH/SDTM |
 | 💰 [**GL/P&L Reconciliation**](https://github.com/KushPatel29/gl-reconciliation-dashboard) | ERP-vs-subledger reconciliation that detects four discrepancy classes and proves every dollar of variance ties to source — then re-runs the same engine, unmodified, over a FOCUS-format cloud bill for FinOps chargeback. 558 tests. | T-SQL, SQLite, Power BI, DAX, Tableau |
-| 🚚 [**Legacy-to-Fabric Migration**](https://github.com/KushPatel29/legacy-to-fabric-migration) | SSIS/SSRS → notebook pipeline with parallel-run validation and a GO/NO-GO cutover gate; negative tests prove the validator catches dropped rows, offsetting errors and phantom keys — and, just as importantly, that it *doesn't* fire on shuffled row order or last-place float drift. Two empty outputs used to return GO; that one is fixed and first in the file. GIS acceptance controls now protect governed spatial assets through cutover as well. 211 tests. | SSIS, SSRS, T-SQL, PySpark, GIS |
+| 🏗️ [**Asset Management & Legacy-to-Fabric**](https://github.com/KushPatel29/legacy-to-fabric-migration) · [**asset evidence**](https://github.com/KushPatel29/legacy-to-fabric-migration/tree/master/examples/asset_management) | A deterministic 96-record, six-service asset portfolio connects data confidence, lifecycle, condition, criticality, inspections, replacement value and ownership to condition×criticality risk, $2.55M annualized renewal need, a prioritized work programme, governed WGS 84 risk layer and transparent $8M affordability scenario. Nine source records are blocked before planning instead of being imputed. The wider repo adds SSIS/SSRS → Fabric parallel-run validation, a GO/NO-GO cutover gate, GIS asset acceptance, requirements/process/RAID/UAT/adoption evidence, Microsoft 365 design, and a public-sector decision/procurement brief. All asset evidence is synthetic and not an approved capital plan. 228 tests. | Asset management, BA delivery, GIS, Fabric, SSIS/SSRS, Python |
 
 ## My favorite results are the losses
 
@@ -140,7 +153,15 @@ eval-driven development · **Governance** — Kimball modeling, metric
 dictionaries, data contracts, reconciliation controls, HIPAA Safe Harbor and
 k-anonymity de-identification, PHI/PII-safe pipeline design ·
 **Legacy MSBI** — SSIS, SQL Agent, and moving all of it forward without
-breaking month-end
+breaking month-end · **Business analysis** — stakeholder and requirements
+work, current/future-state process, business cases, charters, traceability,
+RAID/status, UAT, change/adoption, executive decision briefs and vendor-option
+evaluation · **Asset and spatial information (portfolio evidence)** — governed
+asset registers, lifecycle, condition, criticality, inspections, renewal need,
+capital affordability, GIS reconciliation, GeoJSON and WGS 84 · **Microsoft
+365** — Word, Excel, PowerPoint and Teams; SharePoint information architecture
+and Power Automate workflow design are clearly labelled portfolio blueprints,
+not production administration
 
 ## Background
 
