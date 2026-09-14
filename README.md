@@ -17,11 +17,11 @@ the recommendation.
 Everything below was built under a single rule: **no claim without a number,
 and no number without a test that fails if it stops being true.** Every repo
 generates its data from a fixed seed, rebuilds end-to-end in GitHub Actions,
-and re-verifies its own claims on every push — **9,415 automated tests across
+and re-verifies its own claims on every push — **9,419 automated tests across
 the fourteen featured repos below**. A green badge here means *it runs*, not
 just that it's written down.
 
-Nine of them have **hosted destinations you can click** — no local install:
+Ten of them have **hosted destinations you can click** — no local install:
 [retail analytics platform](https://kushpatel29.github.io/wholesale-analytics-platform/) ·
 [transaction monitoring](https://aml-transaction-monitoring.streamlit.app) ·
 [cross-sell console](https://cross-sell-rep-console.streamlit.app) ·
@@ -30,9 +30,10 @@ Nine of them have **hosted destinations you can click** — no local install:
 [attribution vs truth](https://attribution-vs-truth.streamlit.app) ·
 [clinical evidence console](https://kush-clinical-data-dashboard.streamlit.app/) ·
 [inventory decision studio](https://inventory-analytics-app.onrender.com/) ·
-[network risk decision room](https://kush-network-risk-decision-room.streamlit.app/).
+[network risk decision room](https://kush-network-risk-decision-room.streamlit.app/) ·
+[asset-management decision board](https://kush-asset-management-decision-board.streamlit.app/).
 The first is a prerendered static site, so it opens instantly. Inventory
-Analytics runs on Render; the other seven interactive destinations run on
+Analytics runs on Render; the other eight interactive destinations run on
 Streamlit Community Cloud and may take a moment to wake or request a Streamlit
 sign-in, depending on the host's current visibility setting.
 
@@ -41,7 +42,8 @@ support?** Start with the
 [Inventory Analytics live decision studio](https://inventory-analytics-app.onrender.com/)
 and its [requirements-to-UAT interview case](https://github.com/KushPatel29/inventory-analytics-app/blob/master/docs/business-analysis-and-interview-guide.md),
 then review the
-[live portfolio asset-management decision board](https://kushpatel29.github.io/#asset-management-proof),
+[live asset-management decision board](https://kush-asset-management-decision-board.streamlit.app/),
+its [portfolio case](https://kushpatel29.github.io/#asset-management-proof),
 the [asset lifecycle, condition/criticality, renewal and capital-scenario evidence](https://github.com/KushPatel29/legacy-to-fabric-migration/tree/master/examples/asset_management)
 and the [public-sector decision and procurement brief](https://github.com/KushPatel29/legacy-to-fabric-migration/blob/master/docs/business-analysis/PUBLIC_SECTOR_DECISION_AND_PROCUREMENT_BRIEF.md).
 All asset records, coordinates, costs, conditions and scenarios are synthetic;
@@ -68,7 +70,7 @@ lying. Start there:
 | 🏥 [**Health System Decision Support**](https://github.com/KushPatel29/healthcare-claims-analytics) | Two health systems, one standard. **Canadian side:** CIHI-DAD-shaped activity (CMG+/RIW, cost per weighted case, ALC, risk-adjusted readmission), SPC with Laney correction — where I found the metric everyone reports is 4.6× overdispersed and fires 41 signals in 19 of 24 months — and a health-economic evaluation that comes out *dominant* on one costing perspective and $192k/QALY on the other. Ends in a briefing note and a costed business case. **US side:** an NRV model pricing $3.6M of open AR at the ~$1.7M it will actually collect. Plus Safe Harbor + k-anonymity de-identification with a measured re-identification risk. The Canadian layer now leads the Power BI report — activity and the ALC/flow/SPC page come first, because that is the order a health authority reads them in. No PHI. 604 tests. | Python, Power BI, DAX, SPC, HTA |
 | 🧪 [**Clinical Data Management**](https://github.com/KushPatel29/clinical-data-management) · [**live ▶**](https://kush-clinical-data-dashboard.streamlit.app/) | A trial database as code: CDASH CRF metadata, an executable Data Validation Specification, SDTM DM/AE/VS with conformance checks, MedDRA/WHODrug coding, and a UAT plan generated from the spec. The generator writes an exhaustive defect manifest — 49 injected, **49 detected, 0 missed, 0 false positives** — and that reconciliation caught a real bug where four protocol deviations went silently undetected. The status board is hand-generated SVG, because "stdlib only" is a claim and a chart is not a good enough reason to break it. 255 tests. | Python, CDISC, CDASH/SDTM |
 | 💰 [**GL/P&L Reconciliation**](https://github.com/KushPatel29/gl-reconciliation-dashboard) | ERP-vs-subledger reconciliation that detects four discrepancy classes and proves every dollar of variance ties to source — then re-runs the same engine, unmodified, over a FOCUS-format cloud bill for FinOps chargeback. 558 tests. | T-SQL, SQLite, Power BI, DAX, Tableau |
-| 🏗️ [**Asset Management & Legacy-to-Fabric**](https://github.com/KushPatel29/legacy-to-fabric-migration) · [**decision board ▶**](https://kushpatel29.github.io/#asset-management-proof) · [**asset evidence**](https://github.com/KushPatel29/legacy-to-fabric-migration/tree/master/examples/asset_management) | A deterministic 96-record, six-service asset portfolio connects data confidence, lifecycle, condition, criticality, inspections, replacement value and ownership to condition×criticality risk, $2.55M annualized renewal need, a prioritized work programme, governed WGS 84 risk layer and transparent $8M affordability scenario. Nine source records are blocked before planning instead of being imputed. The wider repo adds SSIS/SSRS → Fabric parallel-run validation, a GO/NO-GO cutover gate, GIS asset acceptance, requirements/process/RAID/UAT/adoption evidence, Microsoft 365 design, and a public-sector decision/procurement brief. All asset evidence is synthetic and not an approved capital plan. 228 tests. | Asset management, BA delivery, GIS, Fabric, SSIS/SSRS, Python |
+| 🏗️ [**Asset Management & Legacy-to-Fabric**](https://github.com/KushPatel29/legacy-to-fabric-migration) · [**live decision board ▶**](https://kush-asset-management-decision-board.streamlit.app/) · [**asset evidence**](https://github.com/KushPatel29/legacy-to-fabric-migration/tree/master/examples/asset_management) | The live decision board makes a deterministic 96-record, six-service asset portfolio challengeable: change the funding envelope, service scope and risk focus; inspect funded and deferred assets; review the condition×criticality matrix and governed WGS 84 layer; trace nine blocked source exceptions; and download the exact scenario evidence. The wider repo adds SSIS/SSRS → Fabric parallel-run validation, a GO/NO-GO cutover gate, requirements/process/RAID/UAT/adoption evidence, Microsoft 365 design, and a public-sector decision/procurement brief. All asset evidence is synthetic and not an approved capital plan. 232 tests. | Asset management, BA delivery, GIS, Streamlit, Fabric, SSIS/SSRS, Python |
 
 ## My favorite results are the losses
 
