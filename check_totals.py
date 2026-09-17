@@ -16,12 +16,46 @@ checked here rather than trusted:
 Exits non-zero if the featured figures stop summing to the headline. The dbt
 project contributes data tests rather than pytest cases, so it is counted
 explicitly and named, not silently folded in.
+
+Adding up is not enough, though. On 2026-09-17 this page summed perfectly to
+11,119 while four of its rows were behind their repositories -- Marketing said
+91 against a badge of 128. So each row is also compared with the portfolio
+site's manifest, whose counts the site's own CI holds to every repository's
+badge. That needs the network; `--offline` skips it and says so.
 """
+import json
 import re
 import sys
+import urllib.request
 from pathlib import Path
 
 README = Path(__file__).resolve().parent / "README.md"
+MANIFEST = ("https://raw.githubusercontent.com/KushPatel29/KushPatel29.github.io/"
+            "main/portfolio-manifest.json")
+ROW = re.compile(r"^\|[^|]*?\(https://github\.com/KushPatel29/([\w.-]+)\)"
+                 r".*?([\d,]+) tests\. \|", re.M)
+
+
+def rows_that_disagree_with_the_site(text: str) -> list[str] | None:
+    try:
+        with urllib.request.urlopen(MANIFEST, timeout=30) as response:
+            manifest = json.load(response)
+    except OSError as error:
+        print(f"site manifest unreachable ({error}); rows not compared")
+        return None
+    site = {p["repository"].rstrip("/").rsplit("/", 1)[-1].lower(): p["testCount"]
+            for p in manifest["projects"]}
+    wrong = []
+    for repo, count in ROW.findall(text):
+        stated = int(count.replace(",", ""))
+        expected = site.get(repo.lower())
+        if expected is None:
+            wrong.append(f"{repo}: on this page, not on the site")
+        elif stated != expected:
+            wrong.append(f"{repo}: this page says {stated:,}, the site says {expected:,}")
+    print(f"{len(ROW.findall(text))} rows compared with the site manifest")
+    return wrong
+
 
 # dbt asserts with its own test framework, not pytest, so its contribution is
 # written as "154 dbt data tests" and does not match the pattern below.
@@ -59,6 +93,13 @@ def main() -> int:
         print(f"\nFAIL: they disagree by {abs(total - headline):,}. Update the "
               "cards and the headline together.", file=sys.stderr)
         return 1
+
+    if "--offline" not in sys.argv:
+        wrong = rows_that_disagree_with_the_site(text)
+        if wrong:
+            print("\nFAIL: rows that disagree with the site:\n  " + "\n  ".join(wrong),
+                  file=sys.stderr)
+            return 1
     # ASCII on purpose: this runs on a Windows console as often as on a CI
     # runner, and cp1252 cannot encode a tick.
     print("\nOK: the featured counts add up to the number this page claims")
