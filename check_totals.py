@@ -58,9 +58,9 @@ def rows_that_disagree_with_the_site(text: str) -> list[str] | None:
 
 
 # dbt asserts with its own test framework, not pytest, so its contribution is
-# written as "154 dbt data tests" and does not match the pattern below.
-# 148 generic and singular tests plus 6 unit tests.
-DBT_TESTS = 154
+# written as "157 dbt data tests" and does not match the pattern below.
+# 151 generic and singular tests plus 6 unit tests.
+DBT_TESTS = 157
 
 
 def main() -> int:
