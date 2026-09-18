@@ -18,8 +18,8 @@ Everything below was built under a single rule: **no claim without a number,
 and no number without a test that fails if it stops being true.** Every repo
 but one generates its data from a fixed seed — the wildfire forecast reads
 Canada's public fire and weather records instead — rebuilds end-to-end in
-GitHub Actions, and re-verifies its own claims on every push — **11,328
-automated tests across the fifteen featured repos below**. A green badge here means *it runs*, not
+GitHub Actions and re-verifies its own claims on every push —
+**11,328 automated tests across the fifteen featured repos below**. A green badge here means *it runs*, not
 just that it's written down.
 
 Eleven of them have **hosted destinations you can click** — no local install:
