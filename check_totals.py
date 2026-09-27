@@ -32,8 +32,11 @@ from pathlib import Path
 README = Path(__file__).resolve().parent / "README.md"
 MANIFEST = ("https://raw.githubusercontent.com/KushPatel29/KushPatel29.github.io/"
             "main/portfolio-manifest.json")
+# The count may sit anywhere in its row: the Inventory Analytics row carries a
+# sentence after it, and a pattern anchored on "tests. |" skipped that row for
+# weeks while still printing a comparison count that looked complete.
 ROW = re.compile(r"^\|[^|]*?\(https://github\.com/KushPatel29/([\w.-]+)\)"
-                 r".*?([\d,]+) tests\. \|", re.M)
+                 r"[^\n]*?([\d,]+) tests\.", re.M)
 
 
 def rows_that_disagree_with_the_site(text: str) -> list[str] | None:
@@ -53,7 +56,11 @@ def rows_that_disagree_with_the_site(text: str) -> list[str] | None:
             wrong.append(f"{repo}: on this page, not on the site")
         elif stated != expected:
             wrong.append(f"{repo}: this page says {stated:,}, the site says {expected:,}")
-    print(f"{len(ROW.findall(text))} rows compared with the site manifest")
+    compared = len(ROW.findall(text))
+    counted = len(re.findall(r"([\d,]+) tests\.", text))
+    print(f"{compared} rows compared with the site manifest")
+    if compared != counted:
+        wrong.append(f"{counted} rows state a test count but only {compared} could be compared")
     return wrong
 
 
