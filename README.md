@@ -47,9 +47,9 @@ Fourteen of them have **hosted destinations you can click** — no local install
 [wildfire risk forecast](https://wildfire-prediction-app1.streamlit.app) ·
 [asset-management decision board](https://kush-asset-management-decision-board.streamlit.app/) ·
 [portfolio intelligence](https://kushpatel29.github.io/projects/portfolio-intelligence-platform/dist/).
-The retail platform and Portfolio Intelligence are prerendered static pages, so they open instantly.
-Inventory Analytics runs on Render; the other eleven interactive destinations run on
-Streamlit Community Cloud, where a job visits every one of them every three
+The retail platform, Inventory Analytics and Portfolio Intelligence are prerendered static pages, so they
+open instantly (the full inventory app, with uploads, runs on Render behind its page). The other eleven
+run on Streamlit Community Cloud, where a job visits every one of them every three
 hours so a link does not land on a sleeping app. A first load can still take a
 moment, or ask for a Streamlit sign-in if the host's visibility setting changes.
 
