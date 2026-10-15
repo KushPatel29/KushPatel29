@@ -61,6 +61,14 @@ def rows_that_disagree_with_the_site(text: str) -> list[str] | None:
     print(f"{compared} rows compared with the site manifest")
     if compared != counted:
         wrong.append(f"{counted} rows state a test count but only {compared} could be compared")
+    # The comparison above only reads rows that exist. A project added to the
+    # site and never to this page passed it: Corridor went live as project 21
+    # while this page still said twenty. Every site project needs a row here.
+    linked = {r.lower() for r in re.findall(
+        r"^\|[^|]*?\(https://github\.com/KushPatel29/([\w.-]+)\)", text, re.M)}
+    for repo in sorted(site):
+        if repo not in linked:
+            wrong.append(f"{repo}: on the site, missing from this page")
     return wrong
 
 
