@@ -24,20 +24,20 @@ Where reporting and data quality are the core of the job, the same view exists f
 
 ## Start with these three
 
-1. **[GrowthOps OS](https://github.com/KushPatel29/GrowthOps-OS)**: ad platforms
+1. **[GrowthOps OS](https://github.com/KushPatel29/GrowthOps-OS)** · [▶ 72-second tour](https://kushpatel29.github.io/assets/video/growthops-tour.mp4): ad platforms
    claimed $3.72M in revenue; the business collected $3.06M. I explained every
    dollar between the two, and a seven-page Power BI report and a formula-driven
    Excel workbook reach that answer independently, to the cent.
    [Workbook ↓](https://github.com/KushPatel29/GrowthOps-OS/raw/main/dashboards/GrowthOps_OS_Excel_Dashboard.xlsx) ·
    [Power BI hand-off](https://github.com/KushPatel29/GrowthOps-OS/blob/main/docs/power-bi-handoff.md) ·
    [case study](https://github.com/KushPatel29/GrowthOps-OS/blob/main/docs/case-study.md)
-2. **[Supply Chain Control Tower](https://github.com/KushPatel29/supply-chain-control-tower)**:
+2. **[Supply Chain Control Tower](https://github.com/KushPatel29/supply-chain-control-tower)** · [▶ 72-second tour](https://kushpatel29.github.io/assets/video/control-tower-tour.mp4):
    OTIF sits at 90.4% against a 95% target, and the problem is where the stock
    sits, not how much there is. A contract-tested PySpark and Delta Lake pipeline,
    run as a Databricks job, under an eight-page Power BI control tower.
    [Case study](https://github.com/KushPatel29/supply-chain-control-tower/blob/master/docs/business_process_improvement_case.md) ·
    [live decision studio](https://kush-network-risk-decision-room.streamlit.app/)
-3. **[B.C. Local-Government Finance](https://github.com/KushPatel29/bc-local-government-finance)**:
+3. **[B.C. Local-Government Finance](https://github.com/KushPatel29/bc-local-government-finance)** · [▶ 64-second tour](https://kushpatel29.github.io/assets/video/bc-finance-tour.mp4):
    real public data. Ninety official provincial files held to written contracts,
    a dbt model with 31 data tests, and the finding that the 68 municipalities
    investing below renewal need are $570M a year short.
@@ -158,7 +158,7 @@ Enterprise Reporting* (Vancouver)
 - Secure-by-design delivery: RLS/RBAC, column-level security, masking for
   cost/margin and people data.
 
-**Shivam Investments** — *Financial Analyst, Data & Reporting* (remote)
+**Shivam Investments** — *Financial Analyst, Data & Reporting* (Vadodara, India, hybrid)
 - GL/P&L reconciliations across sources — the discipline my
   [reconciliation repo](https://github.com/KushPatel29/gl-reconciliation-dashboard)
   turns into a tested engine.
