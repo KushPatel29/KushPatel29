@@ -1,29 +1,27 @@
-name: Totals
+name: Profile
 
-# This page states a headline test total and then twelve numbers that are
-# supposed to add up to it. They have disagreed before - the page claimed 81
-# tests for a repository whose badge said 404 - because the figures were typed
-# once and never compared to anything. For a portfolio whose one rule is that
-# no claim ships without a test, that is the worst defect it can carry.
+# This profile, the portfolio site and each repository's README are three front
+# doors to the same work, and they have disagreed before. check_profile.py holds
+# this page to the site's manifest: every project has a row, the three featured
+# projects match the site's flagships, and no test totals creep back in.
 
 on:
   push:
   pull_request:
   schedule:
-    # Weekly, so a green badge means the arithmetic holds now rather than that
-    # it held the day of the last edit.
+    # Weekly, so a green badge means the profile still matches the site now.
     - cron: "37 6 * * 3"
 
 permissions:
   contents: read
 
 jobs:
-  totals:
+  profile:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: The featured counts must add up to the headline
-        run: python check_totals.py
+      - name: The profile must match the portfolio's manifest
+        run: python check_profile.py
