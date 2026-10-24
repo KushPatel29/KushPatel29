@@ -59,6 +59,8 @@ if "small-sample noise, not bias" in text or "p ≈ 0.23" in text:
     failures.append("the obsolete fairness interpretation/example returned")
 if "independently modelled plan" not in text:
     failures.append("identify the independent utility planning baseline")
+if "HubSpot run as a production integration" in text:
+    failures.append("describe the executed HubSpot developer-account integration without implying customer production tenure")
 
 if re.search(r"[\d,]{3,}\s+automated tests", text, re.I):
     failures.append("a headline test total is back")
