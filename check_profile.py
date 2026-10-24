@@ -22,6 +22,9 @@ import sys
 import urllib.request
 from pathlib import Path
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 README = Path(__file__).resolve().parent / "README.md"
 MANIFEST = ("https://raw.githubusercontent.com/KushPatel29/KushPatel29.github.io/"
             "main/portfolio-manifest.json")
