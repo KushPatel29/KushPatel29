@@ -61,6 +61,8 @@ if "independently modelled plan" not in text:
     failures.append("identify the independent utility planning baseline")
 if "HubSpot run as a production integration" in text:
     failures.append("describe the executed HubSpot developer-account integration without implying customer production tenure")
+if "grades every forecast it published" in text:
+    failures.append("retain the forecast grader's first-per-station-day, current-grid and leads 2-7 scope")
 
 if re.search(r"[\d,]{3,}\s+automated tests", text, re.I):
     failures.append("a headline test total is back")
