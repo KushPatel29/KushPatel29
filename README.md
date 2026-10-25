@@ -154,6 +154,9 @@ when a technique would be decoration is, I think, the actual skill.
 The repos above aren't hypotheticals — they're sharpened versions of problems
 I've worked professionally:
 
+The employment improvement percentages below are directional internal estimates;
+the supporting employer records are not publicly available.
+
 **Two Rivers Specialty Meats** — *Data Analyst: Operations, Logistics &
 Enterprise Reporting* (Vancouver)
 - Defined governed KPIs for P&L/GL and operations (OTIF, inventory turns,
