@@ -223,7 +223,7 @@ not production administration
 
 - Google Data Analytics
 - IBM Python for Data Science, AI and Development
-- Power BI Data Modelling with DAX · Advanced SQL
+- Advanced SQL
 - SQL for Data Science: Data Pipelines, DBMS, Data Modeling
 
 </details>
